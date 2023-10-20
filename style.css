@@ -1,0 +1,52 @@
+/** BASIC STYLE **/
+
+@font-face {
+    font-family: Poppins;
+    src: url(./fonts/Poppins-Regular.ttf);
+}
+
+* {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --main-color: #fd4646;
+    --text-color: #02ac70;
+    --bg-color: #fff;
+    --container-color: #1e1e2a;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    color: var(--bg-color);
+    background: var(--container-color);
+}
+
+/** HEADER **/ 
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--container-color);
+    box-shadow: 0 1px 4px hsla(0, 0, 98%, 0.1);
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
