@@ -50,3 +50,7 @@ header {
     justify-content: space-between;
     padding: 20px 0;
 }
+
+section {
+    height: 100vh;
+}
