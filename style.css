@@ -212,3 +212,6 @@ header {
     margin-left: 1.6rem;
 }
 
+section {
+    height: 100vh;
+}
