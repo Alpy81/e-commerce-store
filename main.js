@@ -31,6 +31,7 @@ function ready() {
     var button = addCart[i];
     button.addEventListener("click", addCartClicked);
   }
+  loadCartItems();
 }
 
 function removeCartItem(event) {
@@ -47,6 +48,7 @@ function quantityChanged(event) {
   }
   updateTotal();
   saveCartItems();
+  updateCartIcon();
 }
 
 function addCartClicked(event) {
@@ -58,6 +60,7 @@ function addCartClicked(event) {
   addProductToCart(title, price, productImg);
   updateTotal();
   saveCartItems();
+  updateCartIcon();
 }
 
 function addProductToCart(title, price, productImg) {
@@ -94,6 +97,7 @@ function addProductToCart(title, price, productImg) {
     .getElementsByClassName("cart-quantity")[0]
     .addEventListener("change", quantityChanged);
   saveCartItems();
+  updateCartIcon();
 }
 
 function updateTotal() {
@@ -134,4 +138,42 @@ function saveCartItems() {
     cartItems.push(item);
   }
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
+}
+
+function loadCartItems() {
+  var cartItems = localStorage.getItem("cartItems");
+  if (cartItems) {
+    (cartItems) => {
+      cartItems = JSON.parse(cartItems);
+
+      for (var i = 0; i < cartItems.length; i++) {
+        var item = cartItems[i];
+        addProductToCart(item.title, item.price, item.productImg);
+
+        var cartBoxes = document.getElementsByClassName("cart-box");
+        var cartBox = cartBoxes[cartBoxes.length - 1];
+        var quantityElement =
+          cartBox.getElementsByClassName("cart-quantity")[0];
+        quantityElement.value = item.quantity;
+      }
+    };
+  }
+  var cartTotal = localStorage.getItem("cartTotal");
+  if (cartTotal) {
+    document.getElementsByClassName("total-price")[0].innerText =
+      "$" + cartTotal;
+  }
+}
+
+function updateCartIcon() {
+  var cartBoxes = document.getElementsByClassName("cart-box");
+  var quantity = 0;
+
+  for (var i = 0; i < cartBoxes.length; i++) {
+    var cartBox = cartBoxes[i];
+    var quantityElement = cartBox.getElementsByClassName("cart-quantity")[0];
+    quantity += parseInt(quantityElement.value);
+  }
+  var cartIcon = document.querySelector("#cart-icon");
+  cartIcon.setAttribute("data-quantity", quantity);
 }
