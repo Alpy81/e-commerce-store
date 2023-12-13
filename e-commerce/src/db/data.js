@@ -6,7 +6,7 @@ const data = [
     title: "Nike Air Monarch IV",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140,00",
+    prevPrice: "$130,00",
     newPrice: "200",
     company: "Nike",
     color: "white",
