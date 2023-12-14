@@ -2,7 +2,7 @@ import React from "react";
 import "./Category.css";
 
 const Category = () => {
-  return <div>Category</div>;
+  return <div></div>;
 };
 
 export default Category;
