@@ -27,7 +27,7 @@
   display: block;
 }
 
-.rating-star {
+.ratings-start {
   color: #d5ab55;
 }
 
@@ -38,7 +38,7 @@
 
 .card-price {
   display: block;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 

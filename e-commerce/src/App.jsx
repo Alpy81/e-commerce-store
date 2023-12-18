@@ -6,16 +6,15 @@ import Recommonded from "./Recommonded/Recommonded";
 import Category from "./Sidebar/Category/Category";
 import Colors from "./Sidebar/Colors/Colors";
 import Price from "./Sidebar/Price/Price";
+import Sidebar from "./Sidebar/Sidebar";
 
 const App = () => {
   return (
     <>
+      <Sidebar />
       <Navigation />
-      <Products />
       <Recommonded />
-      <Category />
-      <Colors />
-      <Price />
+      <Products />
     </>
   );
 };
