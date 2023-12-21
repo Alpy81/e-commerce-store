@@ -1,4 +1,3 @@
-import React from "react";
 import "./Sidebar.css";
 import { BsCart4 } from "react-icons/bs";
 import Category from "./Category/Category";
